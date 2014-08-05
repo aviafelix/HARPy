@@ -9,7 +9,7 @@ class Response(object):
 
         self.status = self.raw["status"]
         self.status_text = self.raw["statusText"]
-        self.http_version = self.raw["httpVersion"]
+        self.http_version = self.raw.get("httpVersion", None)
 
         self.cookies = []
         for c in self.raw["cookies"]:
