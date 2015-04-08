@@ -6,12 +6,12 @@ from . import entry
 
 
 class Har(object):
-    def __init__(self, f):
+    def __init__(self, f, encoding='utf-8'):
         if not isinstance(f, dict):
             if not os.path.isfile(f):
                 raise IOError("%s does not exist." % f)
 
-            fp = open(f, 'r')
+            fp = open(f, 'r', encoding=encoding)
             self._raw = json.load(fp)
             fp.close()
         else:
