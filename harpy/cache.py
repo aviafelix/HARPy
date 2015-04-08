@@ -23,7 +23,7 @@ class CacheRequest(object):
         self.raw = j
 
         if "expires" in self.raw:
-            self.expires = CacheRequest(self.raw["expires"])
+            self.expires = self.raw["expires"]
         else:
             self.expires = None
 
