@@ -9,7 +9,7 @@ class Cookie(object):
         else:
             self.path = ''
         if "domain" in self.raw:
-            self.domain = self.raw["path"]
+            self.domain = self.raw["domain"]
         else:
             self.domain = ''
         if "expires" in self.raw:
